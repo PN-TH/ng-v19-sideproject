@@ -1,0 +1,15 @@
+<div
+  class="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center hover:shadow-xl border-1 border-transparent transition"
+  pokemonTypeColor="{{ pokemon.types[0] }}"
+  classPrefix="hover:borderColor"
+>
+  <img [src]="pokemon.picture" [alt]="pokemon.name" class="w-32 h-32 object-contain mb-4" />
+  <h3 class="text-xl font-semibold text-gray-900">{{ pokemon.name }}</h3>
+  <pokemon-life [life]="pokemon.life"></pokemon-life>
+  <div class="mt-2 flex gap-2">
+    @for (type of pokemon.types; track type) {
+      <pokemon-type [type]="type"></pokemon-type>
+    }
+  </div>
+  <small class="text-gray-400 mt-2"> Créé le : {{ pokemon.created | date: 'dd/MM/yyyy' }} </small>
+</div>

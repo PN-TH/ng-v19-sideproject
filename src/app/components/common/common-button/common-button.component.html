@@ -1,0 +1,10 @@
+<button [class]="buttonClass" [type]="type" [disabled]="disabled" (click)="onClick()">
+  @if (loading) {
+    <span
+      class="animate-spin border-2 border-white border-t-transparent rounded-full w-4 h-4"
+    ></span>
+  }
+  @if (!loading) {
+    <ng-content></ng-content>
+  }
+</button>

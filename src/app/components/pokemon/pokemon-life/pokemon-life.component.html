@@ -1,0 +1,21 @@
+<div class="flex flex-col items-center gap-3 mt-3">
+  <div class="flex gap-2">
+    <common-button [disabled]="life === 0" size="sm" color="secondary" (click)="decreaseLife()"
+      >-</common-button
+    >
+
+    <common-button
+      [disabled]="life >= initialLife"
+      size="sm"
+      color="secondary"
+      (click)="increaseLife()"
+      >+</common-button
+    >
+  </div>
+  <div class="flex flex-col items-center">
+    <span>{{ life }} / {{ initialLife }}</span>
+    <span class="text-sm" [ngClass]="life | hpStatus: initialLife : 'class'">
+      {{ life | hpStatus: initialLife }}
+    </span>
+  </div>
+</div>
